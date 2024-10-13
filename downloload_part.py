@@ -3,9 +3,9 @@ from typing import TypeVar, NoReturn
 
 MatLike = TypeVar('MatLike')
 
-def loader(way_to_picture: str, see_picture: bool=False, *, method_to_open=None, window_name: str=None) -> MatLike:
+def loader(way_to_picture: str, print_status: bool=False, *, method_to_open=None, window_name: str=None) -> MatLike:
     img = cv2.imread(way_to_picture, method_to_open) 
-    if see_picture:
+    if print_status:
         if window_name is None:
             window_name = way_to_picture.split('/')[-1].split('.')[0]
         print('Press any keybord key to close picture.')

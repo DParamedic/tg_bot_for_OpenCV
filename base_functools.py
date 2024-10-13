@@ -1,4 +1,4 @@
-from downloload_part import loader, downloader
+from downloload_part import loader
 import cv2
 from typing import TypeVar, NoReturn, Union
 import numpy as np
