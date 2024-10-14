@@ -24,20 +24,21 @@ def cmd(cmd: bool=True) -> None:
                         print(core)
             except Exception as ex:
                 print(f'Error: {ex}.')
-    def blur_comparison(img):
-        cv2.imshow('averaging', blur_img(img, 'averaging', 3))
-        cv2.imshow('gaussian', blur_img(img, 'gaussian', 3))
-        cv2.imshow('median', blur_img(img, 'median', 3))
-        cv2.waitKey(0)
-
-    info_dict = {}
-    for i in range(1, 5):
-        way_to_picture = f'./data_set/tokey_{i}.jpg'
-        img = loader(way_to_picture, print_status=False, method_to_open=cv2.IMREAD_GRAYSCALE) 
-        info_dict[way_to_picture.split('/')[-1].split('.')[0]] = photo_info(img)
-        find_contours_of_cards(img, print_status=True)
-    return info_dict
+    
 
 
 if __name__ == "__main__":
-    main(cmd=True)
+    cmd(cmd=True)
+    # def blur_comparison(img):
+    #     cv2.imshow('averaging', blur_img(img, 'averaging', 3))
+    #     cv2.imshow('gaussian', blur_img(img, 'gaussian', 3))
+    #     cv2.imshow('median', blur_img(img, 'median', 3))
+    #     cv2.waitKey(0)
+
+    # info_dict = {}
+    # for i in range(1, 5):
+    #     way_to_picture = f'./data_set/tokey_{i}.jpg'
+    #     img = loader(way_to_picture, print_status=False, method_to_open=cv2.IMREAD_GRAYSCALE) 
+    #     info_dict[way_to_picture.split('/')[-1].split('.')[0]] = photo_info(img)
+    #     find_contours_of_cards(img, print_status=True)
+    # return info_dict
