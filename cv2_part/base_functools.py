@@ -1,8 +1,10 @@
-from downloload_part import loader
-import cv2
 from typing import TypeVar, NoReturn, Union
 import numpy as np
 from math import sqrt
+
+import cv2
+
+from .downloload_part import loader
 
 MatLike = TypeVar('MatLike')
 
@@ -54,7 +56,7 @@ def pixel_change(img: MatLike=None, rgb_value: Union[tuple[int, int, int], int]=
             rgb_value = eval(input('Введите кортеж rgb: '))
         img[height_c, width_c] = rgb_value
         return img
-    elif rgb_value is 1:
+    elif len(rgb_value) == 1:
         img[height_c, width_c] = rgb_value
         return img
     else:
@@ -161,3 +163,6 @@ def blur_img(img: MatLike, method: str, compr_ratio: int, gaussian_core_deviatio
         return res_img
     else:
         raise TypeError(f'Do not ask method {method}.')
+    
+if __name__ == "__main__":
+    print(photo_info(loader('./data_set/tokey_1.jpg', True)))

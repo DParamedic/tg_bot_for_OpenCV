@@ -1,5 +1,6 @@
-import cv2
 from typing import TypeVar, NoReturn
+
+import cv2
 
 MatLike = TypeVar('MatLike')
 

@@ -9,11 +9,12 @@
 # )
 # For except error qt.qpa.plugin: Could not find the Qt platform plugin "wayland" in "/home/user/Documents/venv/lib/python3.11/site-packages/cv2/qt/plugins"
 
-import cv2
 from typing import TypeVar, NoReturn, Union
 
-from base_functools import *
-from downloload_part import loader
+import cv2
+
+from .base_functools import *
+from .downloload_part import loader
 
 MatLike = TypeVar('MatLike')
 

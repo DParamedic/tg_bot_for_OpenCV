@@ -1,7 +1,8 @@
 import cv2
-from base_functools import *
-from find_object import *
-from downloload_part import *
+
+from .base_functools import *
+from .find_object import *
+from .downloload_part import *
 
 def cmd(cmd: bool=True) -> None:
     if cmd:

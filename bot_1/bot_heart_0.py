@@ -24,7 +24,7 @@ async def united_downloader():
     await task2
 
 def main() -> None:
-    application = Application.builder().token("7732354386:AAF2yzlF4fsmnul-YI21iiHO25SRxrU7qWE").build()
+    application = Application.builder().token("7732354386:AAF2yzlF4fsmnul-YI21iiHO25SRxrU7qWE").build() # don't commit token!
 
     application.add_handler(CommandHandler('start', start_callback))
     application.add_handlers([CommandHandler('picture', start_download_photo), MessageHandler(filters.PHOTO, united_downloader())])
