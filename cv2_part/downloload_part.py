@@ -14,17 +14,11 @@ def loader(way_to_picture: str, print_status: bool=False, *, method_to_open=None
         cv2.waitKey(0)
     return img
 
-def downloader(cv2_obj: MatLike=None, new_picture_name: str=None, new_picture_expansion: str=None, way_to_save: str='./') -> NoReturn:
-    """Use way_to_picture or cv2_obj. If use both this ways, only the cv2_obj will be processing.
-    By default new_picture_expansion is 'jpg', new_picture_name is 'picture'."""
+def downloader(cv2_obj: MatLike=None, new_picture_name: str=None) -> NoReturn:
     if new_picture_name is None:
         new_picture_name = input('Enter new picture name (\'picture\' by default): ')
         if new_picture_name == '':
             new_picture_name = 'picture'
-    if new_picture_expansion is None:
-        new_picture_expansion = input('Enter new picture expansion (jpg by default): ')
-        if new_picture_expansion == '':
-            new_picture_expansion = 'jpg'
-    cv2.imwrite(f'{new_picture_name}.{new_picture_expansion}', cv2_obj)
+    cv2.imwrite(f'{new_picture_name}', cv2_obj)
     
 
