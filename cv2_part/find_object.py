@@ -30,7 +30,7 @@ def find_contours_of_cards(img, print_status: bool=False, thrash: int=200) -> Se
     if print_status:
         cv2.imshow('trash_binary', thresh_img)
         cv2.waitKey(0)
-    (_, cnts) = cv2.findContours(thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) 
+    (cnts, _) = cv2.findContours(thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) 
     # cv2.RETR_EXTERNAL -- только внешние контуры. Для извлечения всех конткров применяется cv2.RETR_LIST.
     # Последний метод метод аппроксимации контура. cv2.CHAIN_APPROX_SIMPLE -- удаление лишних точек в целях экономиии памяти.
     return cnts
@@ -76,7 +76,3 @@ def draw_rectangle_aroud_cards(cards_coordinates, img):
                     0.5, (36, 255, 12), 1)
     cv2.imshow('Image', img)
     cv2.waitKey(0)
-
-if __name__ == "__main__":
-    img = loader('./data_set/tokey_1.jpg', method_to_open=cv2.IMREAD_GRAYSCALE)
-    print(find_contours_of_cards(img, print_status=True))
